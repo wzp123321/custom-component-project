@@ -1,5 +1,5 @@
-# 下载xlsx插件压缩版到本地  html头部引入
-  <!-- xlsx插件 -->
+# 下载xlsx插件压缩版到本地 html头部引入
+<!-- xlsx插件 -->
 ```javascript
   <script src="<%= BASE_URL %>static/xlsx.full.min.js"></script>
 ```
