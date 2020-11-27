@@ -8,6 +8,12 @@ import "@/assets/less/flex.less";
 import "@/assets/less/common.less";
 // 引入依赖
 import "lib-flexible/flexible";
+// 注入器
+import elementUIRegister from "@/plugins/elementUIRegister";
+Vue.use(elementUIRegister);
+// 自定义组件
+import { customRegister } from "@/plugins/customComponent";
+customRegister();
 
 Vue.config.productionTip = false;
 

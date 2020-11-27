@@ -11,6 +11,13 @@ module.exports = {
                 remUnit: 75
             })
             .end()
+    },
+    configureWebpack: config => {
+        config.externals = {
+            $: 'jquery',
+            jquery: 'jquery',
+            XLSX: 'XLSX'
+        }
     }
 
 }
