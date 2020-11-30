@@ -2,6 +2,7 @@
 <!-- xlsx插件 -->
 ```javascript
   <script src="<%= BASE_URL %>static/xlsx.full.min.js"></script>
+  npm install file-saver --save
 ```
 
 ## vue.config.js中配置XLSX
