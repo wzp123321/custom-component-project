@@ -4,7 +4,7 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
+export const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
@@ -20,6 +20,17 @@ const routes: Array<RouteConfig> = [
         component: () =>
           import(
             /* webpackChunkName: "custom-component-excel" */ "@/views/components/Excel/index.vue"
+          ),
+      },
+      {
+        path: "/loading",
+        name: "Loading",
+        meta: {
+          name: "loading模板",
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "custom-component-loading" */ "@/views/components/Loading/index.vue"
           ),
       },
     ],

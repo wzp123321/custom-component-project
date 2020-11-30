@@ -7,6 +7,7 @@
         'menu-item': true,
         'menu-active': menuItem.path === $route.path,
       }"
+      @click="handleRoutelink(menuItem.path)"
     >
       {{ menuItem.meta.name }}
     </span>
@@ -15,20 +16,26 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import { RouteRecord } from "vue-router";
+import { RouteConfig } from "vue-router";
+import routes from "@/router/index";
 @Component({
   name: "Slide",
   components: {},
 })
 export default class Slide extends Vue {
   // 菜单
-  private menus: RouteRecord[] = [];
+  private menus: RouteConfig[] = [];
   // 根据路由配置文件获取menu列表
   getMenuList() {
-    const menus: RouteRecord[] = this.$route.matched.filter((item) => {
+    const menus: RouteConfig[] = (routes.options
+      .routes as any)[0].children.filter((item: RouteConfig) => {
       return item.meta && item.meta.name;
     });
     this.menus = menus;
+  }
+  // 路由跳转
+  handleRoutelink(path: string) {
+    this.$router.push(path);
   }
   // 初始化
   mounted() {
