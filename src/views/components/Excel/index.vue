@@ -48,6 +48,7 @@ export default class ExcelUtil extends Vue {
   private dataList: StudentInfo[] = [];
   // 选择文件
   async handleFileChange(file: any) {
+    console.log(file.raw)
     const res: any = await import2Excel(file.raw);
     this.dataList = res;
   }

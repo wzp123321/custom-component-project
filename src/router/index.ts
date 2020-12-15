@@ -33,6 +33,17 @@ export const routes: Array<RouteConfig> = [
             /* webpackChunkName: "custom-component-loading" */ "@/views/components/Loading/index.vue"
           ),
       },
+      {
+        path: "/fileDownload",
+        name: "FileDownload",
+        meta: {
+          name: "文件读取下载",
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "custom-component-filedownload" */ "@/views/components/FileDownload/index.vue"
+          ),
+      },
     ],
   },
 ];
