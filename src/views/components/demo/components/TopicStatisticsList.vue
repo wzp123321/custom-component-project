@@ -57,7 +57,7 @@ import TopicCollapse from "./TopicCollapse.vue";
 })
 export default class TopicStatisticsList extends Vue {
   @Prop({ default: [] })
-  private info!: any[];
+  private info!: {}[];
   @Prop({ default: 0 })
   private index!: number;
   private asystisticsExpand = false;
@@ -77,8 +77,8 @@ export default class TopicStatisticsList extends Vue {
 
 <style lang="less" scoped>
 .topic-statistics {
-  height: 100%;
   overflow: hidden;
+  margin-bottom: 100px;
   &-index {
     font-weight: bold;
     padding: 10px;

@@ -1,22 +1,28 @@
 <template>
   <div class="wrapper">
+    <!-- 题目 -->
     <TopicStatisticsList
       v-for="(item, index) in list"
       :key="index"
       :index="index"
       :info="item"
     ></TopicStatisticsList>
+
+    <!-- 直播流 -->
+    <VideoPlayerComp></VideoPlayerComp>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import TopicStatisticsList from "./TopicStatisticsList.vue";
+import TopicStatisticsList from "./components/TopicStatisticsList.vue";
+import VideoPlayerComp from "./components/VideoPlayer.vue";
 
 @Component({
   name: "Demo",
   components: {
     TopicStatisticsList,
+    VideoPlayerComp,
   },
 })
 export default class Demo extends Vue {
