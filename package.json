@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -13,7 +14,9 @@
     "file-saver": "^2.0.5",
     "lib-flexible": "^0.3.2",
     "px2rem-loader": "^0.1.9",
+    "swiper": "^6.4.1",
     "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0",

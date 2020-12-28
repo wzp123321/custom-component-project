@@ -24,8 +24,6 @@ module.exports = {
     },
     configureWebpack: config => {
         config.externals = {
-            $: 'jquery',
-            jquery: 'jquery',
             XLSX: 'XLSX'
         }
     }

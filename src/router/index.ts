@@ -44,6 +44,24 @@ export const routes: Array<RouteConfig> = [
             /* webpackChunkName: "custom-component-filedownload" */ "@/views/components/FileDownload/index.vue"
           ),
       },
+      {
+        path: "/awesomeSwiper",
+        name: "AwesomeSwiper",
+        meta: { name: "awesomeSwiper使用" },
+        component: () =>
+          import(
+            /* webpackChunkName: "custom-component-awesomeSwiper" */ "@/views/components/AwesomeSwiper/index.vue"
+          ),
+      },
+      {
+        path: "/demo",
+        name: "Demo",
+        meta: { name: "demo" },
+        component: () =>
+          import(
+            /* webpackChunkName: "custom-component-demo" */ "@/views/components/demo/index.vue"
+          ),
+      },
     ],
   },
 ];

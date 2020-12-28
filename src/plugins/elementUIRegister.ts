@@ -7,6 +7,8 @@ import {
   Popover,
   Icon,
   Upload,
+  Input,
+  Message,
 } from "element-ui";
 
 export default {
@@ -18,5 +20,7 @@ export default {
     Vue.use(Popover);
     Vue.use(Icon);
     Vue.use(Upload);
+    Vue.use(Input);
+    Vue.prototype.$message = Message;
   },
 };
