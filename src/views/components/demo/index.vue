@@ -31,6 +31,43 @@ export default class Demo extends Vue {
       title: "12121",
     },
   ];
+
+  /**
+   * 找出数组中连续出现两次的数字
+   */
+  test(list: number[]) {
+    let arr: number[] = [];
+    list.forEach((item) => {
+      if (!arr.includes(item)) {
+        arr.push(item);
+      } else {
+        arr = arr.filter((childItem) => {
+          return childItem !== item;
+        });
+      }
+    });
+    return arr;
+  }
+  /**
+   * 红绿灯
+   * 红-3
+   * 绿-2
+   * 黄-1
+   */
+  trafficLight() {
+    let count = -1;
+    setInterval(() => {
+      count++;
+      const remainder = count % 6;
+      if (remainder >= 0 && remainder <= 2) {
+        console.log("红灯", 3 - remainder);
+      } else if (remainder >= 3 && remainder <= 4) {
+        console.log("绿灯", 5 - remainder);
+      } else {
+        console.log("黄灯", 6 - remainder);
+      }
+    }, 1000);
+  }
 }
 </script>
 
