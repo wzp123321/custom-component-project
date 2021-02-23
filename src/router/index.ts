@@ -53,16 +53,16 @@ export const routes: Array<RouteConfig> = [
             /* webpackChunkName: "custom-component-awesomeSwiper" */ "@/views/components/AwesomeSwiper/index.vue"
           ),
       },
-      {
-        path: "/demo",
-        name: "Demo",
-        meta: { name: "demo" },
-        component: () =>
-          import(
-            /* webpackChunkName: "custom-component-demo" */ "@/views/components/demo/index.vue"
-          ),
-      },
     ],
+  },
+  {
+    path: "/demo",
+    name: "Demo",
+    meta: { name: "demo" },
+    component: () =>
+      import(
+        /* webpackChunkName: "custom-component-demo" */ "@/views/components/demo/index.vue"
+      ),
   },
 ];
 

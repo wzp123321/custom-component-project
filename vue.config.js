@@ -24,7 +24,8 @@ module.exports = {
     },
     configureWebpack: config => {
         config.externals = {
-            XLSX: 'XLSX'
+            XLSX: 'XLSX',
+            'video.js': 'videojs'
         }
     }
 

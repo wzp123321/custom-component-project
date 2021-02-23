@@ -7,3 +7,4 @@ declare module "XLSX";
 declare module 'file-saver'
 declare module 'vue-video-player'
 declare module 'vue-baberrage'
+declare module 'video.js'
