@@ -18,7 +18,7 @@ require("vue-video-player/src/custom-theme.css");
 import "videojs-contrib-hls"; //单是 RTMP 的话不需要第三方库，如果是 HLS 的话需要引入videojs-contrib-hls，看具体情况而定。
 Vue.use(VideoPlayer);
 // 弹幕组件
-import { vueBaberrage } from 'vue-baberrage'
+import { vueBaberrage } from "vue-baberrage";
 Vue.use(vueBaberrage);
 
 // 引入依赖
@@ -35,6 +35,26 @@ Vue.config.productionTip = false;
 router.beforeEach((to, from, next) => {
   document.title = to.meta.name || "自定义组件合集";
   next();
+});
+
+/**
+ * 全局自定义指令
+ */
+Vue.directive("custom2", {
+  inserted(el, binding) {
+    console.log("binding", binding);
+    if (binding && binding.value) {
+      el.innerText = "测试全局自定义指令";
+      console.log("el", el);
+      el.style.position = "absolute";
+      el.style.top = " 50%";
+      const arg = (binding as any).arg;
+      el.style[arg] = "50%";
+      el.style.transform = "translate(-50%,-50%)";
+      el.style.padding = "10px";
+      el.style.color = "#333";
+    }
+  },
 });
 
 new Vue({
