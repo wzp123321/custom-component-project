@@ -1,7 +1,7 @@
 <template>
   <div class="c-Home flex-row-justify-end">
     <Slide></Slide>
-    <Content> </Content>
+    <keep-alive><Content> </Content></keep-alive>
   </div>
 </template>
 
