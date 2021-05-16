@@ -53,6 +53,15 @@ export const routes: Array<RouteConfig> = [
             /* webpackChunkName: "custom-component-awesomeSwiper" */ "@/views/components/AwesomeSwiper/index.vue"
           ),
       },
+      {
+        path: "/filePreview",
+        name: "filePreview",
+        meta: { name: "filePreview文件预览" },
+        component: () =>
+          import(
+            /* webpackChunkName: "custom-component-filePreview" */ "@/views/components/FilePreview/index.vue"
+          ),
+      },
     ],
   },
   {
