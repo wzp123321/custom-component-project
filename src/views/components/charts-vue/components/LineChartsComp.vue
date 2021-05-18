@@ -26,7 +26,7 @@ use([
 ]);
 
 export default {
-  name: "PieChartsComp",
+  name: "LinesChartsComp",
   components: {
     VChart,
   },
@@ -34,7 +34,7 @@ export default {
     return {
       option: {
         title: {
-          text: "折线图堆叠",
+          text: "折线图VueEcharts",
         },
         tooltip: {
           trigger: "axis",
