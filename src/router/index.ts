@@ -71,6 +71,15 @@ export const routes: Array<RouteConfig> = [
             /* webpackChunkName: "custom-component-mavonEditor" */ "@/views/components/mavon-editor/index.vue"
           ),
       },
+      {
+        path: "/vueEcharts",
+        name: "vueEcharts",
+        meta: { name: "vueEcharts使用" },
+        component: () =>
+          import(
+            /* webpackChunkName: "custom-component-vueEcharts" */ "@/views/components/charts-vue/index.vue"
+          ),
+      },
     ],
   },
   {

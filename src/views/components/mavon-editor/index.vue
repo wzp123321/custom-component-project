@@ -1,6 +1,11 @@
 <template>
   <div class="editor">
-    <mavonEditor v-model="editorValue"></mavonEditor>
+    <mavonEditor
+      v-model="editorValue"
+      ref="mavonEditor"
+      :ishljs="true"
+      @imgAdd="onImageUpload"
+    ></mavonEditor>
   </div>
 </template>
 <script>
@@ -13,6 +18,14 @@ export default {
     return {
       editorValue: "",
     };
+  },
+  methods: {
+    /**
+     * 图片上传
+     */
+    onImageUpload(position, file) {
+      console.log(position, file);
+    },
   },
 };
 </script>
