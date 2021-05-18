@@ -20,7 +20,8 @@ Vue.use(VideoPlayer);
 // 弹幕组件
 import { vueBaberrage } from "vue-baberrage";
 Vue.use(vueBaberrage);
-
+// editor css
+import 'mavon-editor/dist/css/index.css';
 // 引入依赖
 import "lib-flexible/flexible";
 // 注入器

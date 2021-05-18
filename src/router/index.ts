@@ -54,12 +54,21 @@ export const routes: Array<RouteConfig> = [
           ),
       },
       {
-        path: "/filePreview",
-        name: "filePreview",
-        meta: { name: "filePreview文件预览" },
+        path: "/pictureCropper",
+        name: "pictureCropper",
+        meta: { name: "pictureCropper截图裁剪工具" },
         component: () =>
           import(
-            /* webpackChunkName: "custom-component-filePreview" */ "@/views/components/FilePreview/index.vue"
+            /* webpackChunkName: "custom-component-pictureCropper" */ "@/views/components/PictureCropper/index.vue"
+          ),
+      },
+      {
+        path: "/mavonEditor",
+        name: "mavonEditor",
+        meta: { name: "mavonEditormarkdown编辑器" },
+        component: () =>
+          import(
+            /* webpackChunkName: "custom-component-mavonEditor" */ "@/views/components/mavon-editor/index.vue"
           ),
       },
     ],
