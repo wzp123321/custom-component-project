@@ -6,16 +6,19 @@
   <div class="echarts-wrapper flex-wrap">
     <PieChartsComp></PieChartsComp>
     <LinesChartsComp></LinesChartsComp>
+    <BarChartsComp></BarChartsComp>
   </div>
 </template>
 <script>
 import PieChartsComp from "./components/PieChartsComp";
 import LinesChartsComp from "./components/LineChartsComp";
+import BarChartsComp from './components/BarChartsComp'
 export default {
   components: {
     PieChartsComp,
     LinesChartsComp,
-  },
+    BarChartsComp
+  }
 };
 </script>
 <style lang="less" scoped>

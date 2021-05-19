@@ -1,6 +1,6 @@
 <template>
   <!-- 饼图 -->
-  <v-chart class="chart" :option="option" />
+  <v-chart ref="charts" class="chart" :option="option" />
 </template>
 
 <script>
@@ -43,13 +43,7 @@ export default {
         legend: {
           orient: "vertical",
           left: "left",
-          data: [
-            "测试1",
-            "测试2",
-            "测试3",
-            "测试4",
-            "测试5",
-          ],
+          data: ["测试1", "测试2", "测试3", "测试4", "测试5"],
         },
         series: [
           {
@@ -76,6 +70,11 @@ export default {
         ],
       },
     };
+  },
+  mounted() {
+    window.addEventListener("resize", () => {
+      this.$refs.charts.resize();
+    });
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <!-- 饼图 -->
-  <v-chart class="chart" :option="option" />
+  <v-chart ref="charts" class="chart" :option="option" />
 </template>
 
 <script>
@@ -12,7 +12,7 @@ import {
   TooltipComponent,
   LegendComponent,
   GridComponent,
-  ToolboxComponent
+  ToolboxComponent,
 } from "echarts/components";
 import VChart from "vue-echarts";
 use([
@@ -22,7 +22,7 @@ use([
   TooltipComponent,
   GridComponent,
   LegendComponent,
-  ToolboxComponent
+  ToolboxComponent,
 ]);
 
 export default {
@@ -120,6 +120,11 @@ export default {
         ],
       },
     };
+  },
+  mounted() {
+    window.addEventListener("resize", () => {
+      this.$refs.charts.resize();
+    });
   },
 };
 </script>
