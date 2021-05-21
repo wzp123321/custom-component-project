@@ -80,6 +80,15 @@ export const routes: Array<RouteConfig> = [
             /* webpackChunkName: "custom-component-vueEcharts" */ "@/views/components/charts-vue/index.vue"
           ),
       },
+      {
+        path: "/componentCommunication",
+        name: "componentCommunication",
+        meta: { name: "组件间通信" },
+        component: () =>
+          import(
+            /* webpackChunkName: "custom-component-componentCommunication" */ "@/views/components/comp-communication/index.vue"
+          ),
+      },
     ],
   },
   {

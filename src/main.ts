@@ -30,7 +30,9 @@ Vue.use(elementUIRegister);
 // 自定义组件
 import { customRegister } from "@/plugins/customComponent";
 customRegister();
-
+// eventBus
+import eventBus from './views/components/comp-communication/eventBus'
+Vue.prototype.bus = eventBus;
 Vue.config.productionTip = false;
 
 router.beforeEach((to, from, next) => {

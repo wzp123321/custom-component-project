@@ -3,22 +3,20 @@
   <!-- https://v-charts.js.org/-->
   <!-- https://github.com/ecomfe/vue-echarts/blob/main/README.zh-Hans.md-->
   <!-- vue-ehcarts  所有组件https://github.com/apache/echarts/blob/master/src/echarts.all.ts -->
+  <!-- https://codechina.csdn.net/mirrors/ecomfe/vue-echarts/-/blob/master/README.zh_CN.md -->
   <div class="echarts-wrapper flex-wrap">
     <PieChartsComp></PieChartsComp>
     <LinesChartsComp></LinesChartsComp>
-    <BarChartsComp></BarChartsComp>
   </div>
 </template>
 <script>
 import PieChartsComp from "./components/PieChartsComp";
 import LinesChartsComp from "./components/LineChartsComp";
-import BarChartsComp from './components/BarChartsComp'
 export default {
   components: {
     PieChartsComp,
     LinesChartsComp,
-    BarChartsComp
-  }
+  },
 };
 </script>
 <style lang="less" scoped>
