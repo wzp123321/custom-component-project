@@ -35,6 +35,7 @@
     "tests/**/*.tsx"
 , "src/utils/download.js"  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "new-component"
   ]
 }

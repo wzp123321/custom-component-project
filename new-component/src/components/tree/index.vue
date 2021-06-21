@@ -6,7 +6,6 @@
       :checkable="true"
       showIcon
       showLine
-      :load-data="onLoadData"
       @check="treeCheck"
       v-model="checkedKeys"
     >
@@ -16,12 +15,13 @@
         :style="{ fontSize: '16px' }"
       />
     </a-tree>
-    <a-button type="primary" @click="submitSingleArray"> 提交</a-button>
+    <a-button type="primary" @click="submitMulitArray"> 提交</a-button>
   </div>
 </template>
 <script>
+/*eslint-disable*/
 import { Tree, Icon, Button } from "ant-design-vue";
-import { treeData } from "./mock";
+// import { treeData } from "./mock";
 export default {
   components: {
     "a-tree": Tree,
@@ -34,14 +34,60 @@ export default {
         children: "child",
         title: "name"
       },
-      treeData,
-      checkedKeys: [],
+      treeData: [],
+      checkedKeys: ["0-0-0","0-1-0","0-4-0","0-5-0"],
       hasloaded: false,
       selectDataList: [] // 选中的数组
     };
   },
   async created() {
-    await this.initSingleArrayData();
+    // await this.initSingleArrayData();
+    let proArr = [];
+    for (let i = 0; i < 10; i++) {
+      let cityArr = [];
+      for (let j = 0; j < 10; j++) {
+        let areaArr = [];
+        for (let k = 0; k < 10; k++) {
+          // if (j == 1 || j == 4 || j == 12) {
+            let schoolArr = [];
+            // for (let l = 0; l < 102; l++) {
+            //   schoolArr.push({
+            //     title: `school-${i}-${j}-${k}-${l}`,
+            //     key: `${i}-${j}-${k}-${l}`,
+            //     type: "school",
+            //     checkable: true,
+            //     disableCheckbox: false
+            //   });
+            // }
+            areaArr.push({
+              title: `area-${i}-${j}-${k}`,
+              key: `${i}-${j}-${k}`,
+              type: "area",
+              checkable: true,
+              disableCheckbox: false,
+              children: schoolArr
+            });
+          // }
+        }
+        cityArr.push({
+          title: `city-${i}-${j}`,
+          key: `${i}-${j}`,
+          type: "city",
+          checkable: true,
+          disableCheckbox: false,
+          children: areaArr
+        });
+      }
+      proArr.push({
+        title: `pro-${i}`,
+        key: `${i}`,
+        type: "pro",
+        checkable: true,
+        disableCheckbox: false,
+        children: cityArr
+      });
+    }
+    this.treeData = proArr;
     this.hasloaded = true;
   },
   methods: {
@@ -255,9 +301,10 @@ export default {
             ids.push(cityItem.key);
             cityItem.children.forEach(areaItem => {
               ids.push(areaItem.key);
-              areaItem.children.forEach(schoolItem => {
-                ids.push(schoolItem.key);
-              });
+              areaItem.children &&
+                areaItem.children.forEach(schoolItem => {
+                  ids.push(schoolItem.key);
+                });
             });
           });
         }
@@ -414,7 +461,7 @@ export default {
                   this.$set(areaItem, "allSelected", false);
                   // 过滤掉没有被选中的学校
                   areaItem.children =
-                    areaItem.children.length > 0
+                    areaItem.children && areaItem.children.length > 0
                       ? areaItem.children.filter(schoolItem => {
                           return checkId.includes(schoolItem.key);
                         })
@@ -422,7 +469,7 @@ export default {
                   /**
                    * 如果当前区下面学校都没有被选中  删掉当前区
                    */
-                  if (areaItem.children.length === 0) {
+                  if (areaItem.children && areaItem.children.length === 0) {
                     cityItem.children = cityItem.children.filter(reduceItem => {
                       return reduceItem.key !== areaItem.key;
                     });

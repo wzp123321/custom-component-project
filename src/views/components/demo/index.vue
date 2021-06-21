@@ -1,7 +1,7 @@
 <template>
   <div class="demo">
     <OnlineTimeStampLine></OnlineTimeStampLine>
-    <div v-custom2:[direction]="true"></div>
+    <div v-custom2:[direction]="loading"></div>
     <div @click="handleCountAdd">
       {{ count }}------------{{ isDouble ? "是双数" : "是单数" }}
     </div>
@@ -34,6 +34,7 @@ interface AreaInfo {
   },
 })
 export default class VideoJsPlayerComp extends Vue {
+  private loading = true;
   private direction = "left";
 
   private count = 0;
@@ -535,6 +536,7 @@ export default class VideoJsPlayerComp extends Vue {
 
   private handleCountAdd() {
     this.count++;
+    this.loading = !this.loading
   }
 
   private getSuccessionIndexList(array: number[]) {
@@ -620,6 +622,7 @@ export default class VideoJsPlayerComp extends Vue {
   }
   created() {
     this.msg = "3333222222";
+    this.loading = true;
   }
   mounted() {
     // console.log(this.test);

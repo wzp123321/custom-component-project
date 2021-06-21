@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
@@ -30,6 +32,15 @@ export default new Router({
         path: '/tree',
         name: 'tree',
         component: () => import('../components/tree')
+      }, {
+        path: '/remove-tree',
+        name: 'tree',
+        component: () => import('../components/remove-tree')
+      },
+      {
+        path: '/demo',
+        name: 'demo',
+        component: () => import('../components/demo')
       }
     ]
   }]
